@@ -127,5 +127,5 @@ Add items here when a decision is pending; move them to the Changelog when resol
 - Never delete the Changelog.
 
 ## 17. Changelog
-- 2026-10-20: Phase 1 setup on branch `phase-1-setup`. Added Loader (section 3, step -1) with `criticalAssets` list in `src/show/`; added `typecheck` script; enabled TS `strict` (section 2 required it, template lacked it); fonts fixed as Yatra One (display), Tiro Devanagari Hindi (Sutradhar/Hindi text), Inter (Latin UI), self-hosted (see DECISIONS.md); `.env`/`.env.*` gitignored with `.env.example` kept. Loader's "Skip to plain version" currently opens a stub until Plain mode exists. Phase 1 marked in progress.
 - 2026-10-20: Initial brief. Concept: kathputli puppet show with Hindi narration and English subtitles; stack Vite + React + TypeScript; guestbook of last 20 approved chits; Plain mode for recruiters.
+- 2026-10-20: Phase 1 setup on branch `phase-1-setup`. Added Loader (section 3, step -1) with `criticalAssets` list in `src/show/`; added `typecheck` script; enabled TS `strict` (section 2 required it, template lacked it); fonts fixed as Yatra One (display), Tiro Devanagari Hindi (Sutradhar/Hindi text), Inter (Latin UI), self-hosted (see DECISIONS.md); `.env`/`.env.*` gitignored with `.env.example` kept. Loader's "Skip to plain version" currently opens a stub until Plain mode exists. Phase 1 marked in progress.
