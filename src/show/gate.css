@@ -1,0 +1,41 @@
+.gate {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  animation: gate-in var(--duration-slow) var(--ease-out) both;
+}
+
+.gate__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  color: var(--color-turmeric);
+}
+
+.gate__note {
+  color: var(--color-text-muted);
+}
+
+.gate__button {
+  padding: var(--space-3) var(--space-6);
+  font-weight: 600;
+  color: var(--color-ink);
+  background: var(--color-turmeric);
+  border: 0;
+  border-radius: var(--radius-pill);
+}
+
+.gate__button:hover {
+  background: var(--color-paper);
+}
+
+@keyframes gate-in {
+  from {
+    opacity: 0;
+  }
+}
