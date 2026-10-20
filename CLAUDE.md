@@ -18,6 +18,7 @@ Repo: https://github.com/lannymagnet/Resume_Bharat_Dave
 - Deploy: Vercel or Cloudflare Pages (decide at Phase 6)
 
 ## 3. Show structure (scroll advances scenes; audio plays on its own timeline)
+-1. Loader: closed-curtain loading screen with real progress (fonts and first-scene assets), min display ~1.2s, ~8s timeout fallback, then hands off to the Gate. Never plays audio.
 0. Gate: "Take your seat" / curtain-pull button. This is the user gesture that unlocks audio. Also a visible "Skip the show" button.
 1. Prologue: Sutradhar introduces the hero puppet (Bharat) in one line.
 2. Act 1, The Fort (TCS): rigid symmetric set, puppets move in rehearsed steps. Enterprise experience.
@@ -94,7 +95,9 @@ The act list above is the current plan. Acts can be added, renamed or reordered;
 
 ## 12. Build phases and status
 Mark each phase `[ ]` not started, `[~]` in progress, `[x]` done. Update when a phase finishes.
-- [ ] 1. Scaffold project, content data model (acts, cues, experience, projects, skills), Plain mode rendering
+- [~] 1. Scaffold project, content data model (acts, cues, experience, projects, skills), Plain mode rendering
+  - Done: scaffold, folder layout, design tokens, self-hosted fonts, reset, reduced-motion hook, Loader (with placeholder Gate and Plain stub)
+  - Remaining: content data model, real Plain mode rendering
 - [ ] 2. Gate + curtain + stage + Sutradhar caption system with language toggle and placeholder timing
 - [ ] 3. Puppet rig (one puppet, string animation, action cues), then Prologue and Act 1
 - [ ] 4. Interval, Act 2, Act 3 scenes
@@ -124,4 +127,5 @@ Add items here when a decision is pending; move them to the Changelog when resol
 - Never delete the Changelog.
 
 ## 17. Changelog
+- 2026-10-20: Phase 1 setup on branch `phase-1-setup`. Added Loader (section 3, step -1) with `criticalAssets` list in `src/show/`; added `typecheck` script; enabled TS `strict` (section 2 required it, template lacked it); fonts fixed as Yatra One (display), Tiro Devanagari Hindi (Sutradhar/Hindi text), Inter (Latin UI), self-hosted (see DECISIONS.md); `.env`/`.env.*` gitignored with `.env.example` kept. Loader's "Skip to plain version" currently opens a stub until Plain mode exists. Phase 1 marked in progress.
 - 2026-10-20: Initial brief. Concept: kathputli puppet show with Hindi narration and English subtitles; stack Vite + React + TypeScript; guestbook of last 20 approved chits; Plain mode for recruiters.
