@@ -1,20 +1,14 @@
 import { useCallback, useState } from 'react'
 import { PlainStub } from './plain/PlainStub.tsx'
-import { Gate } from './show/Gate.tsx'
-import { Loader } from './show/Loader.tsx'
+import { PreShow } from './show/preshow/PreShow.tsx'
 
-type Stage = 'loading' | 'gate' | 'plain'
+type Stage = 'preshow' | 'plain'
 
+// TODO(next page): there is no page after the pre-show yet; "Start the show" does nothing.
 export default function App() {
-  const [stage, setStage] = useState<Stage>('loading')
-  const toGate = useCallback(() => setStage('gate'), [])
+  const [stage, setStage] = useState<Stage>('preshow')
   const toPlain = useCallback(() => setStage('plain'), [])
 
   if (stage === 'plain') return <PlainStub />
-  return (
-    <>
-      {stage === 'gate' && <Gate />}
-      {stage === 'loading' && <Loader onDone={toGate} onSkipToPlain={toPlain} />}
-    </>
-  )
+  return <PreShow onSkipToPlain={toPlain} />
 }

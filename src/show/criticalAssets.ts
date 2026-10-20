@@ -1,5 +1,3 @@
-import { curtainTextureUrl } from './curtainTexture.ts'
-
 export interface CriticalAsset {
   id: string
   load: () => Promise<unknown>
@@ -10,22 +8,13 @@ const font = (spec: string, sample: string): CriticalAsset => ({
   load: () => document.fonts.load(spec, sample),
 })
 
-const image = (id: string, src: string): CriticalAsset => ({
-  id: `image:${id}`,
-  load: () =>
-    new Promise<void>((resolve, reject) => {
-      const img = new Image()
-      img.onload = () => resolve()
-      img.onerror = () => reject(new Error(`Failed to load ${id}`))
-      img.src = src
-    }),
-})
-
-/** Everything the Loader waits for. Later scenes extend this list with their own first-view assets. */
+/**
+ * Everything the pre-show waits for. The curtain, board and audience are code-generated, so only fonts for now.
+ * TODO(first scene): add the Prologue's critical assets here once they exist.
+ */
 export const criticalAssets: CriticalAsset[] = [
-  font("400 1em 'Yatra One'", 'भारत की कहानी Bharat'),
-  font("400 1em 'Tiro Devanagari Hindi'", 'पर्दा उठने वाला है'),
-  font("400 1em 'Inter'", 'The curtain is about to rise'),
-  font("600 1em 'Inter'", 'Take your seat'),
-  image('curtain-texture', curtainTextureUrl),
+  font("400 1em 'Yatra One'", 'शो शुरू होने वाला है हाउसफुल The show is about to begin Housefull'),
+  font("400 1em 'Tiro Devanagari Hindi'", 'सीटें भर रही हैं पर्दा उठाइए'),
+  font("400 1em 'Inter'", 'Seats filling Start the show'),
+  font("600 1em 'Inter'", 'Skip to plain version'),
 ]
