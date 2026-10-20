@@ -1,2 +1,1 @@
-// PLACEHOLDER: shared utilities (audio, language toggle, motion prefs).
-export {}
+export { useReducedMotion } from './useReducedMotion.ts'
